@@ -13,7 +13,7 @@
     color: #264B2D !important;
 }
 
-#nava:hover{
+#a:hover, #aRegistro:hover, #aLogin:hover{
     background-color: #264B2D;
     color: white !important;
 }
@@ -30,7 +30,7 @@
 }
 
 body {
-    background-color: #f6f6f6 !important;
+    background-color: #F5F5F5 !important;
 }
 
 hr {
@@ -74,22 +74,29 @@ hr {
 
 .col-sm-6{
     background-color: #B2DCBA !important;
-    text-align: center;
+    text-align: justify;
     margin: 0 auto !important;
     display: inline-block;
     padding-top: 1%;
     padding-bottom: 1%;
     padding-left: 1%;
     padding-right: 1%;
-    border: 3px solid #264B2D;
-    border-radius: 7px;
       margin-top: 1%;
     margin-bottom: 1%;
-    background-color: #f6f6f6 !important;
 }
 
 h2{
     color: #264B2D !important;
+    margin-bottom: 5% !important;
+    text-align: center;
+}
+
+p {
+    color: #000000 !important;
+}
+
+#lista{
+    text-align: left;
 }
 
 #container{
@@ -101,6 +108,14 @@ h2{
     margin-right: 5%;
 }
 
+.row{
+    background-color: #B2DCBA !important;
+}
+
+#imgcontainer{
+    background-color: #F5F5F5 !important;
+    text-align: center;
+}
 
 .carousel, .carousel-inner > .item > img {
     height: 300px !important;
@@ -109,8 +124,8 @@ h2{
 }
 
 #campeonato, #clases {
-    width: 400px;
-    height: 300px;
+    width: 80%;
+    height: 40% !important;
     align-content: center;
 }
 

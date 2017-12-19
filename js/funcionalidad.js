@@ -1,16 +1,16 @@
 $(document).ready(init);
 
 function init(){
-     $("#buttonRegistro").click(function(){
+     $("#aRegistro").click(function(){
         $("#modalRegistro").modal("show");
      });
     
-    $("#buttonLogin").click(function(){
-        if($("#buttonLogin").text() === " Login"){
+    $("#aLogin").click(function(){
+        if($("#aLogin").text() === " Login"){
             $("#modalLogin").modal("show");
         } else {
             sessionStorage.removeItem("token");
-            $("#buttonLogin").text(" Login");
+            $("#aLogin").text(" Login");
         }
     });
   
@@ -34,12 +34,12 @@ function init(){
     
     if (sessionStorage.getItem("token")!=null){
         alert(sessionStorage.getItem("token"));
-        $("#buttonLogin").text(" Logout");
+        $("#aLogin").text(" Logout");
         //$("#iconoLogin").removeClass("glyphicon glyphicon-log-in");
         //$("#buttonLogin").children("i").addClass("glyphicon glyphicon-off");
     }
     
-    $('#buttonLogin').click(function(){
+    $('#aLogin').click(function(){
         $(this).find('i').toggleClass('glyphicon glyphicon-log-in').toggleClass('glyphicon glyphicon-off');
     }); 
     
