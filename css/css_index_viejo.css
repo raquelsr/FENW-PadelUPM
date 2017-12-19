@@ -1,0 +1,57 @@
+
+.navbar-inverse .navbar-brand {
+    color: #264B2D !important;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: #264B2D !important;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover {
+    color:aqua;
+}
+
+#barranavegacion{
+    background-color: #B2DCBA;
+    color: #264B2D !important;
+}
+
+#nava:hover{
+    background-color: #264B2D;
+    color: white !important;
+}
+
+body {
+    background-color: #FFFFFF !important;
+}
+
+#jumbotronimagenes {
+    background-image: url(../img/pista_padel.jpg);
+    height: 315;
+    border:1px solid ;
+    border-radius:20%;
+}
+
+#jumbotrontexto {
+    background-color: #B2DCBA;
+    text-align: center;
+    border:1px solid ;
+    border-radius:10% 90px;
+}
+
+.jumbotron h1 {
+    color: #264B2D !important;
+}
+
+#border{
+    border-style: dashed; 
+    border-width: 5px; 
+    border-image: url(../img/pelota.jpg) 90 90 90 90 stretch;
+}
+
+#footer {
+    margin-top: 100;
+    background-color: #264B2D;
+    color: #FFFFFF;
+    padding-top: 20;
+}

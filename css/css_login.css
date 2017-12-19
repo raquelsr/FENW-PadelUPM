@@ -1,0 +1,37 @@
+.navbar-inverse .navbar-brand {
+    color: #264B2D !important;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: #264B2D !important;
+}
+
+#barranavegacion{
+    background-color: #B2DCBA;
+    color: #264B2D !important;
+}
+
+body {
+    background-image: url(../img/180470165.jpg);
+}
+
+#footer {
+    margin-top: 100;
+    background-color: #264B2D;
+    color: #FFFFFF;
+    padding-top: 20;
+}
+
+.container {
+    background-color: #B2DCBA;
+    color: #264B2D;
+    height: 400;
+    width: 50% !important;
+}
+
+.btn-default {
+    background-color: #264B2D !important; 
+    width: 70%;
+    align-content: center;
+    color: #FFFFFF !important;
+}

@@ -1,0 +1,36 @@
+.navbar-inverse .navbar-brand {
+    color: #264B2D !important;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: #264B2D !important;
+}
+
+#barranavegacion{
+    background-color: #B2DCBA;
+    color: #264B2D !important;
+}
+
+body {
+    background-color: #264B2D !important ;
+}
+
+#footer {
+    margin-top: 100;
+    background-color: #264B2D;
+    color: #FFFFFF;
+    padding-top: 20;
+}
+
+.container {
+    background-color: #B2DCBA;
+    color: #264B2D;
+    height: 90%;
+    width: 90% !important;
+}
+
+.jumbotron {
+        background-color: #B2DCBA !important;
+
+}
+
