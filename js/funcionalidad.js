@@ -1,5 +1,6 @@
 $(document).ready(init);
 
+var arrastrado = false; 
 function init(){
     
     alert("Toooook init " + sessionStorage.getItem("token"));
@@ -50,7 +51,9 @@ function init(){
         if ($("#usr_log").val()==="" || $("#pwd_log").val()===""){
             alert("Usuario o contraseña incorrectos.");
             $("#modalLogin").modal("show");
-        } else {
+        } if (arrastrado != true){
+            alert("Arrastra la imagen para completar el proceso.")
+        }else {
             requestLogin();
         }
     });
@@ -133,4 +136,7 @@ function drop(ev) {
     ev.preventDefault();
     var data = ev.dataTransfer.getData("text");
     ev.target.appendChild(document.getElementById(data));
+    $("#drag1").css("width","20%");
+    $("#drag1").css("height","100%");
+    arrastrado = true;
 }

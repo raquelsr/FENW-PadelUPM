@@ -13,6 +13,10 @@
     color: #264B2D !important;
 }
 
+.navbar-nav>li>a:hover {
+    color: #FFFFFF !important;
+}
+
 .dropdown-toggle{
     color: aqua !important;
 }
@@ -188,7 +192,16 @@ p{
       text-align: center;
       margin: 25px 0;
     }
+    
+    .navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
+        color: #264B2D !important;
+    }
+    
+    .navbar-nav .open .dropdown-menu>li>a:hover {
+        color: #FFFFFF !important;
+    }
 }
+
 
 #footer {
     background-color: #264B2D;
