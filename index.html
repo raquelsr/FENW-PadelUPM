@@ -23,17 +23,29 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>                        
                   </button>
-                  <a class="navbar-brand" id = "a" href="#">Pádel UPM</a>
+                  <div id="icono-barra">
+                      <a class="navbar-brand" id = "a" href="#"><span class="glyphicon glyphicon-home"></span> Pádel UPM</a>
+                  </div>
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                   <ul class="nav navbar-nav">
                     <li><a id= "a" href="#">Inicio</a></li>
                     <li><a id = "a" href="#">Servicios</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Servicios2 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#entrenamiento">Entrenamientos personalizados</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#clases">Clases</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#campeonato">Campeonatos</a></li>
+                        </ul>
+                    </li>
                     <li><a id = "a" href="instalaciones.html">Instalaciones</a></li>
                     <li><a id ="a" href="#">Reservas</a></li>
                   </ul>
                   <ul class="nav navbar-nav navbar-right">
-                    <li><a id = "aRegistro"><span class="glyphicon glyphicon-user"></span> Registro</a></li>
+                    <li id="li_registro"><a id = "aRegistro"><span id="iconoRegistro" class="glyphicon glyphicon-user"></span> Registro</a></li>
                     <li><a id= "aLogin"><span id="iconoLogin" class="glyphicon glyphicon-log-in"></span> Login</a></li>
                   </ul>
                 </div>
@@ -80,7 +92,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="control-label col-sm-2" for="pwd2">Contraseña:</label>
+                                <label class="control-label col-sm-2" for="pwd2">Repetir contraseña:</label>
                                 <div class="col-sm-10">          
                                     <input type="password" class="form-control" id="pwd2" placeholder="Repita la contraseña" name="pwd">
                                 </div>
@@ -92,7 +104,7 @@
                                         <span class="input-group-addon">
                                             <span class="glyphicon glyphicon-calendar"></span>
                                         </span>
-                                        <input type='text' class="form-control" id="calendar" placeholder="dd/mm/yyyy" />
+                                        <input type='date' class="form-control" id="calendar" placeholder="dd/mm/yyyy" />
                                     </div>
                                 </div>
                             </div>
@@ -115,7 +127,7 @@
                   <div class="modal-content">
                      <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h3>Acceder</h3>
+                        <h3>Iniciar sesión</h3>
                     </div>
                      <div class="modal-body">
                         <form class="form-horizontal">
@@ -131,12 +143,20 @@
                                     <input type="password" class="form-control" id="pwd_log" placeholder="Introduce contraseña">
                                 </div>
                             </div>
-                             <div class="form-group">        
-                                <div class="col-sm-offset-2 col-sm-10">
+                            
+                            <div id="dragdrop">
+                                <img id="drag1" src="img/arrastrar.png" draggable="true" ondragstart="drag(event)">
+                                <br>
+                                <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                                <br>
+                            </div>
+                           
+                            <div class="form-group" id="iniciar_sesion">        
                                     <div id="modal-buttons">
-                                        <button type="submit" id="accederLogin" class="btn btn-default">Acceder</button>
+                                        <button type="submit" id="accederLogin" class="btn btn-default">Iniciar sesión</button>
                                     </div>
-                                </div>
+                                    <br>
+                                    <a id="nuevo_usuario">¿No está registrado? Registrese aquí.</a>
                             </div>
                          </form> 
                     </div>
@@ -146,7 +166,7 @@
         </section>
        
         
-        <section>
+        <section name="entrenamiento">
             <div class="container-fluid bg-grey" id = "container">
               <div class="row">
                 <div class="col-sm-6" id="imgcontainer">
@@ -203,7 +223,7 @@
             </div>
         </section>
         
-        <section>
+        <section name="clases">
              <div class="container-fluid bg-grey" id = "container">
               <div class="row">
                 <div class="col-sm-6">
@@ -222,7 +242,7 @@
             </div>
         </section>
         
-        <section>
+        <section name="campeonato">
             <div class="container-fluid bg-grey" id = "container">
               <div class="row">
                 <div class="col-sm-6"  id="imgcontainer">

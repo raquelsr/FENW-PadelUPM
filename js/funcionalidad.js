@@ -1,7 +1,29 @@
 $(document).ready(init);
 
 function init(){
-     $("#aRegistro").click(function(){
+    
+    alert("Toooook init " + sessionStorage.getItem("token"));
+
+    if (sessionStorage.getItem("token")!=null){
+        alert("TenemosToken");
+        //$("#aLogin").text(" Logout");  
+       /* $("#aRegistro").text(" Mi Perfil");
+        var icono = document.createElement("span");
+        icono.setAttribute("class","glyphicon glyphicon-log-in" );
+        $("#aRegistro").append(icono);*/
+        var li_registro = document.getElementById("li_registro");
+        var aRegistro = document.createElement("a");
+        aRegistro.setAttribute("id", "aRegistro");
+        var iRegistro = document.createElement("span");
+        iRegistro.setAttribute("class","glyphicon glyphicon-log-in");
+        
+  //      var registro = document.getElementById("iconoRegistro");
+    //    registro.setAttribute("class", "glyphicon glyphicon-log-in");
+
+   
+    }
+ 
+    $("#aRegistro").click(function(){
         $("#modalRegistro").modal("show");
      });
     
@@ -13,6 +35,26 @@ function init(){
             $("#aLogin").text(" Login");
         }
     });
+    
+    $("#nuevo_usuario").click(function(){
+         $("#modalLogin").modal("hide");
+         $("#modalRegistro").modal("show");
+    })
+    
+       
+   /* $('#aLogin').click(function(){
+        $(this).find('i').toggleClass('glyphicon glyphicon-log-in').toggleClass('glyphicon glyphicon-off');
+    }); */
+    
+    $("#accederLogin").click(function(){
+        if ($("#usr_log").val()==="" || $("#pwd_log").val()===""){
+            alert("Usuario o contraseña incorrectos.");
+            $("#modalLogin").modal("show");
+        } else {
+            requestLogin();
+        }
+    });
+    
   
   /*  $('#calendar').data("DateTimePicker").date(moment(new Date ).format('DD/MM/YYYY HH:mm'));
     $("#calendar").click(function(){
@@ -31,22 +73,7 @@ function init(){
             return "glyphicon glyphicon-off";
         }
     });*/
-    
-    if (sessionStorage.getItem("token")!=null){
-        alert(sessionStorage.getItem("token"));
-        $("#aLogin").text(" Logout");
-        //$("#iconoLogin").removeClass("glyphicon glyphicon-log-in");
-        //$("#buttonLogin").children("i").addClass("glyphicon glyphicon-off");
-    }
-    
-    $('#aLogin').click(function(){
-        $(this).find('i').toggleClass('glyphicon glyphicon-log-in').toggleClass('glyphicon glyphicon-off');
-    }); 
-    
-    $("#accederLogin").click(requestLogin);
-
 }
-
 
  function requestLogin() {
      var user = $("#usr_log").val();
@@ -54,8 +81,8 @@ function init(){
      alert("alert 1");
 
      httpRequest = new XMLHttpRequest();
-     httpRequest.open("GET", "http://fenw.etsisi.upm.es/login?userid=" + user + "&password=" + pwd, true);
-    // httpRequest.open("GET", "http://salonso.etsisi.upm.es/fenw/padel/login.php?userid=" + user + "&password=" + pwd, true);
+    // httpRequest.open("GET", "http://fenw.etsisi.upm.es/login?userid=" + user + "&password=" + pwd, true);
+     httpRequest.open("GET", "http://salonso.etsisi.upm.es/fenw/padel/login.php?userid=" + user + "&password=" + pwd, true);
      httpRequest.responseType = "json";
      httpRequest.onload = login;
      httpRequest.send();
@@ -63,14 +90,19 @@ function init(){
 
  function login() {
     alert("alert 2");
-    /*var cabecera = httpRequest.response;
-    alert(cabecera);
-    localStorage.setItem("token", cabecera);
-    $("#reserva").text("re2");
-    alert($("#reserva").text());
-    var texto = localStorage.getItem("token");
-    alert(texto);*/
-    if (httpRequest.status === 200){
+    var response = httpRequest.response;
+    if (response==="wrong user or password"){
+        alert("El usuario o contraseña introducidos no existen. Intentelo de nuevo.");
+    } else {
+        autenticado(response);
+        /*sessionStorage.setItem("token", response);
+        $("#reserva").text("re2");
+        var texto = sessionStorage.getItem("token");
+        alert("session" + texto);*/
+    }
+
+   
+   /* if (httpRequest.status === 200){
         var cabecera = httpRequest.getResponseHeader("Authorization");
         var token = cabecera.split(" ")[1];
         autenticado(token);
@@ -78,14 +110,27 @@ function init(){
         alert('Usuario o contraseña incorrecta.');
    } else{
        alert('Error.');
-   }      
+   }   */   
 }
 
 function autenticado(token){
-    alert(token);
+    alert("Token" + token);
     sessionStorage.setItem("token", token);    
     $("#modalLogin").modal("hide");
     init();
+}
 
-   // var texto = localStorage.getItem("token");
+
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
 }

@@ -5,7 +5,7 @@
     margin-bottom: 0px !important;
 }
 
-.navbar-inverse .navbar-nav>li>a {
+.navbar-inverse .navbar-nav>li>a{
     color: #264B2D !important;
 }
 
@@ -13,9 +13,31 @@
     color: #264B2D !important;
 }
 
-#a:hover, #aRegistro:hover, #aLogin:hover{
-    background-color: #264B2D;
-    color: white !important;
+.dropdown-toggle{
+    color: aqua !important;
+}
+
+.dropdown:hover{
+    background-color: #264B2D !important;
+    color: #FFFFFF !important;
+}
+
+.dropdown-menu, .navbar-inverse .navbar-nav>.open>a{
+    background-color: #B2DCBA !important;
+    color: #264B2D !important;
+    border-color: #264B2D;
+    margin-bottom: 0px !important;
+}
+
+.navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover{
+    background-color: #264B2D !important;
+    color: #FFFFFF !important;
+}
+
+
+#a:hover, #aRegistro:hover, #aLogin:hover, .dropdown-menu>li>a:hover, .dropdown:hover{
+    background-color: #264B2D !important;
+    color: #FFFFFF !important;
 }
 
 .jumbotron {
@@ -58,8 +80,22 @@ hr {
     color : #FFFFFF;
 }
 
-#modal_buttons{
+.modal-body{
+     background-color: #F0FEF2;
+}
+
+#modal_buttons,#iniciar_sesion {
     text-align: center;
+}
+
+#nuevo_usuario{
+    color: #264B2D !important;
+    font-size: 12px;
+}
+
+.input-group-addon{
+    color: #FFFFFF !important;
+    background-color:  #264B2D !important; 
 }
 
 .btn-default{
@@ -85,10 +121,27 @@ hr {
     margin-bottom: 1%;
 }
 
+#drag1 {
+    width: 20%;
+    height: 20%;
+    text-align: center !important;
+}
+
+#dragdrop{
+    text-align: center !important;
+}
+#div1 {
+    width: 100%;
+    height: 10%;
+    text-align: center !important;
+    border: 2.5px solid #264B2D !important;
+}
+
 h2{
     color: #264B2D !important;
     margin-bottom: 5% !important;
     text-align: center;
+    font-variant: small-caps;
 }
 
 p{
