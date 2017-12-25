@@ -6,10 +6,8 @@
         <script src="https://code.jquery.com/jquery-3.2.1.js"></script>        
         <script type="text/javascript" src="js/funcionalidad.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.12.0/moment.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
-
+        <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
         <title>Pádel UPM</title>
     </head>
     <body>
@@ -23,26 +21,25 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>                        
                   </button>
-                  <div id="icono-barra">
+                  <div>
                       <a class="navbar-brand" id = "a" href="#"><span class="glyphicon glyphicon-home"></span> Pádel UPM</a>
                   </div>
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                   <ul class="nav navbar-nav">
                     <li><a id= "a" href="#">Inicio</a></li>
-                    <li><a id = "a" href="#">Servicios</a></li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Servicios2 <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Servicios <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#entrenamiento">Entrenamientos personalizados</a></li>
+                            <li><a href="#link_entrenamiento">Entrenamientos personalizados</a></li>
                             <li class="divider"></li>
-                            <li><a href="#clases">Clases</a></li>
+                            <li><a href="#link_clases">Clases</a></li>
                             <li class="divider"></li>
-                            <li><a href="#campeonato">Campeonatos</a></li>
+                            <li><a href="#link_campeonato">Campeonatos</a></li>
                         </ul>
                     </li>
                     <li><a id = "a" href="instalaciones.html">Instalaciones</a></li>
-                    <li><a id ="a" href="#">Reservas</a></li>
+                    <li><a id ="aReservas" href="#">Reservas</a></li>
                   </ul>
                   <ul class="nav navbar-nav navbar-right">
                     <li id="li_registro"><a id = "aRegistro"><span id="iconoRegistro" class="glyphicon glyphicon-user"></span> Registro</a></li>
@@ -54,10 +51,15 @@
         </section>
     
         <section class="jumbotron text-center">
-           <div id = "titulo">
-               <h1>Pádel UPM</h1> 
-                <p>¡Bienvenido a la página oficial de pádel de la UPM!</p> 
-                <p>Aquí encontrarás toda la información necesaria sobre el pádel de la Universidad Politécnica de Madrid.</p> 
+           <div>
+               <div class="col-sm-2">
+                   <img id="escudo" src="img/escudo2.png">
+               </div>
+               <div class="col-sm-10">
+                    <h1>Pádel UPM</h1>
+                    <p>¡Bienvenido a la página oficial de pádel de la UPM!</p> 
+                    <p>Aquí encontrarás toda la información necesaria sobre el pádel de la Universidad Politécnica de Madrid.</p> 
+                </div>
             </div>
         </section>
         
@@ -76,36 +78,31 @@
                             <div class="form-group">
                                 <label class="control-label col-sm-2" for="usr_reg">Usuario:</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="usr_reg" placeholder="Introduce un nombre de usuario">
+                                    <input type="text" class="form-control" id="usr_reg" placeholder="Introduce un nombre de usuario" required>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-sm-2"  for="email">Email:</label>
                                 <div class="col-sm-10">       
-                                    <input type="email" class="form-control" id="email" placeholder="Correo electrónico">
+                                    <input type="email" class="form-control" id="email" placeholder="Correo electrónico" required>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-sm-2" for="pwd_reg">Contraseña:</label>
                                 <div class="col-sm-10">          
-                                    <input type="password" class="form-control" id="pwd_reg" placeholder="Introduce una contraseña" name="pwd">
+                                    <input type="password" class="form-control" id="pwd_reg" placeholder="Introduce una contraseña" name="pwd" required>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-sm-2" for="pwd2">Repetir contraseña:</label>
                                 <div class="col-sm-10">          
-                                    <input type="password" class="form-control" id="pwd2" placeholder="Repita la contraseña" name="pwd">
+                                    <input type="password" class="form-control" id="pwd2" placeholder="Repita la contraseña" name="pwd" required>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-sm-2" for="calendar">Fecha de nacimiento:</label>
                                 <div class="col-sm-10">  
-                                    <div class='input-group date' id="calendar">
-                                        <span class="input-group-addon">
-                                            <span class="glyphicon glyphicon-calendar"></span>
-                                        </span>
-                                        <input type='date' class="form-control" id="calendar" placeholder="dd/mm/yyyy" />
-                                    </div>
+                                    <input type='date' class="form-control" id="calendar" placeholder="dd/mm/yyyy" name="date" required/>
                                 </div>
                             </div>
                              <div class="form-group">        
@@ -134,13 +131,13 @@
                             <div class="form-group">
                                 <label class="control-label col-sm-2">Usuario:</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="usr_log" placeholder="Introduce usuario">
+                                    <input type="text" class="form-control" id="usr_log" placeholder="Introduce usuario" required>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-sm-2">Contraseña:</label>
                                 <div class="col-sm-10">          
-                                    <input type="password" class="form-control" id="pwd_log" placeholder="Introduce contraseña">
+                                    <input type="password" class="form-control" id="pwd_log" placeholder="Introduce contraseña" required>
                                 </div>
                             </div>
                             
@@ -154,11 +151,11 @@
                             </div>
                            
                             <div class="form-group" id="iniciar_sesion">        
-                                    <div id="modal-buttons">
-                                        <button type="submit" id="accederLogin" class="btn btn-default">Iniciar sesión</button>
-                                    </div>
-                                    <br>
-                                    <a id="nuevo_usuario">¿No está registrado? Registrese aquí.</a>
+                                <div id="modal-buttons">
+                                    <button type="submit" id="accederLogin" class="btn btn-default">Iniciar sesión</button>
+                                </div>
+                                <br>
+                                <a id="nuevo_usuario">¿No está registrado? Registrese aquí.</a>
                             </div>
                          </form> 
                     </div>
@@ -168,7 +165,7 @@
         </section>
        
         
-        <section name="entrenamiento">
+        <section>
             <div class="container-fluid bg-grey" id = "container">
               <div class="row">
                 <div class="col-sm-6" id="imgcontainer">
@@ -211,7 +208,7 @@
                   </div>
                 </div>
                 <div class="col-sm-6">
-                    <h2>Entrenamientos personalizados</h2>
+                    <h2 id="link_entrenamiento" >Entrenamientos personalizados</h2>
                     <p>Si te sientes un campeón, de verdad lo eres o simplemente quieres avanzar rápidamente en la técnica que rodea a este deporte te podemos configurar sesiones de entrenamiento a tu medida con un entrenador personal que se encargará de: </p>
                     <br>
                     <ul id="lista">
@@ -225,12 +222,12 @@
             </div>
         </section>
         
-        <section name="clases">
+        <section>
              <div class="container-fluid bg-grey" id = "container">
               <div class="row">
                 <div class="col-sm-6">
-                    <div id ="fondocontainer">
-                        <h2>Clases</h2>
+                    <div>
+                        <h2 id="link_clases">Clases</h2>
                         <p>El conjunto de monitores más cualificados se encargará de darte la formación en cuanto a técnica requerida en este deporte.
                         Las clases prácticas te permitirán interiorizar los movimientos adecuados como si fuesen naturales.</p>
                         <p>Las clases colectivas convierten las clases en un espacio dinámico en el que jugar se convierte en una actividad placentera y divertida.</p>
@@ -244,14 +241,14 @@
             </div>
         </section>
         
-        <section name="campeonato">
+        <section>
             <div class="container-fluid bg-grey" id = "container">
               <div class="row">
                 <div class="col-sm-6"  id="imgcontainer">
                     <img id ="campeonato" src = "img/trofeopadel.png">
                 </div>
                 <div class="col-sm-6">
-                    <h2>Campeonatos</h2>
+                    <h2 id="link_campeonato">Campeonatos</h2>
                     <p>El club organiza campeonatos periódicos en los que te puedes divertir al mismo tiempo que mejoras en el deporte. Tenemos campeonatos de un día, de fin de semana y ligas regulares. Puedes participar en los torneos masculinos, femeninos y mixtos.</p>
                 </div>
                 </div>

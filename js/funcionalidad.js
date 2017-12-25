@@ -1,6 +1,7 @@
 $(document).ready(init);
 
 var arrastrado = false; 
+
 function init(){
     
     alert("Toooook init " + sessionStorage.getItem("token"));
@@ -58,26 +59,11 @@ function init(){
         }
     });
     
-  
-  /*  $('#calendar').data("DateTimePicker").date(moment(new Date ).format('DD/MM/YYYY HH:mm'));
-    $("#calendar").click(function(){
-        alert(1);
-    });*/
-//$('#datetimepicker2').data("DateTimePicker").date(new Date());    });
-        /*$("#calendar").datetimepicker({
-                viewMode: 'years'
-            });
-        . data ("DateTimePicker"). FUNCTION ()
-    });*/
-  /*  $("#iconoLogin").toggleClass(function() {
-        if ($("#buttonLogin").text() === " Login") {
-            return "glyphicon glyphicon-log-in";
-        } else {
-            return "glyphicon glyphicon-off";
-        }
-    });*/
+    $("#aReservas").click(function(){
+        alert("Función no implementada.");
+    });
 }
-
+   
  function requestLogin() {
      var user = $("#usr_log").val();
      var pwd = $("#pwd_log").val();

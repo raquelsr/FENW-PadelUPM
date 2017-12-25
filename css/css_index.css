@@ -39,7 +39,7 @@
 }
 
 
-#a:hover, #aRegistro:hover, #aLogin:hover, .dropdown-menu>li>a:hover, .dropdown:hover{
+#a:hover, #aRegistro:hover, #aLogin:hover, #aReservas:hover, .dropdown-menu>li>a:hover, .dropdown:hover{
     background-color: #264B2D !important;
     color: #FFFFFF !important;
 }
@@ -69,15 +69,6 @@ hr {
     border-radius: 90%; 
 }
 
-#hr_vertical{
-    width: 1%;
-    height: 80% !important;
-    background-color: #264B2D !important; 
-    margin-top: 0.7% !important;
-    margin-bottom: 0.7% !important;
-    border-color: #264B2D !important; 
-}
-
 .modal-header{
     text-align: center;
     background-color: #264B2D;
@@ -95,6 +86,12 @@ hr {
 #nuevo_usuario{
     color: #264B2D !important;
     font-size: 12px;
+}
+
+#escudo{
+    opacity: 0.9;
+    width: 80%;
+    height: 50%;
 }
 
 .input-group-addon{
@@ -134,11 +131,17 @@ hr {
 #dragdrop{
     text-align: center !important;
 }
+
 #div1 {
     width: 100%;
     height: 10%;
     text-align: center !important;
     border: 2.5px solid #264B2D !important;
+}
+
+#imagenes{
+    width: 50%;
+    height: 20%;
 }
 
 h2{

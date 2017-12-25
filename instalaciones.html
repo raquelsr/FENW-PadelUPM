@@ -3,17 +3,19 @@
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href=" css/css_instalaciones.css"> 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-                <script src="https://code.jquery.com/jquery-3.2.1.js"></script>        
-
+        <script src="https://code.jquery.com/jquery-3.2.1.js"></script>        
         <script type="text/javascript" src="js/funcionalidad.js"></script>
-
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+        
         <title>Padel UPM - Instalaciones</title>
     </head>
     <body>
         
          <section>
             <nav class="navbar navbar-inverse">
-              <div class="container-fluid" id = "barranavegacion">
+              <div class="container-fluid">
                 <div class="navbar-header">
                   <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                     <span class="icon-bar"></span>
@@ -27,19 +29,18 @@
                 <div class="collapse navbar-collapse" id="myNavbar">
                   <ul class="nav navbar-nav">
                     <li><a id= "a" href="index.html">Inicio</a></li>
-                    <li><a id = "a" href="#">Servicios</a></li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Servicios2 <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Servicios <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#entrenamiento">Entrenamientos personalizados</a></li>
+                            <li><a href="index.html">Entrenamientos personalizados</a></li>
                             <li class="divider"></li>
-                            <li><a href="#clases">Clases</a></li>
+                            <li><a href="index.html">Clases</a></li>
                             <li class="divider"></li>
-                            <li><a href="#campeonato">Campeonatos</a></li>
+                            <li><a href="index.html">Campeonatos</a></li>
                         </ul>
                     </li>
-                    <li><a id = "a" href="instalaciones.html">Instalaciones</a></li>
-                    <li><a id ="a" href="#">Reservas</a></li>
+                    <li><a id = "a" href="#">Instalaciones</a></li>
+                    <li><a id ="aReservas" href="#">Reservas</a></li>
                   </ul>
                   <ul class="nav navbar-nav navbar-right">
                     <li id="li_registro"><a id = "aRegistro"><span id="iconoRegistro" class="glyphicon glyphicon-user"></span> Registro</a></li>
@@ -50,6 +51,105 @@
             </nav>
         </section>
         
+         <section>
+            <div class="modal fade" id="modalRegistro" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+               <div class="modal-dialog">
+                  <div class="modal-content" id="modalContentRegistro">
+                     <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h3>Registrar usuario</h3>
+                    </div>
+                     <div class="modal-body">
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="usr_reg">Usuario:</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="usr_reg" placeholder="Introduce un nombre de usuario" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2"  for="email">Email:</label>
+                                <div class="col-sm-10">       
+                                    <input type="email" class="form-control" id="email" placeholder="Correo electrónico" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="pwd_reg">Contraseña:</label>
+                                <div class="col-sm-10">          
+                                    <input type="password" class="form-control" id="pwd_reg" placeholder="Introduce una contraseña" name="pwd" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="pwd2">Repetir contraseña:</label>
+                                <div class="col-sm-10">          
+                                    <input type="password" class="form-control" id="pwd2" placeholder="Repita la contraseña" name="pwd" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="calendar">Fecha de nacimiento:</label>
+                                <div class="col-sm-10">  
+                                    <input type='date' class="form-control" id="calendar" placeholder="dd/mm/yyyy" name="date" required/>
+                                </div>
+                            </div>
+                             <div class="form-group">        
+                                <div id="modal_buttons">
+                                    <button type="submit" class="btn btn-default">Acceder</button>
+                                    <button data-dismiss="modal"class="btn btn-default">Cerrar</button> 
+                                </div>
+                            </div>
+                         </form> 
+                    </div>
+                </div>
+               </div>
+            </div> 
+        </section>
+        
+        <section>
+            <div class="modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+               <div class="modal-dialog">
+                  <div class="modal-content">
+                     <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h3>Iniciar sesión</h3>
+                    </div>
+                     <div class="modal-body">
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">Usuario:</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="usr_log" placeholder="Introduce usuario">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">Contraseña:</label>
+                                <div class="col-sm-10">          
+                                    <input type="password" class="form-control" id="pwd_log" placeholder="Introduce contraseña">
+                                </div>
+                            </div>
+                            
+                            <div id="dragdrop">
+                                <label>Arrastra la imagen a la caja:</label>
+                                <br>
+                                <img id="drag1" src="img/arrastrar.png" draggable="true" ondragstart="drag(event)">
+                                <br>
+                                <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                                <br>
+                            </div>
+                           
+                            <div class="form-group" id="iniciar_sesion">        
+                                <div id="modal-buttons">
+                                    <button type="submit" id="accederLogin" class="btn btn-default">Iniciar sesión</button>
+                                </div>
+                                <br>
+                                <a id="nuevo_usuario">¿No está registrado? Registrese aquí.</a>
+                            </div>
+                         </form> 
+                    </div>
+                </div>
+               </div>
+            </div> 
+        </section>
+        
         <h1> Instalaciones </h1>
         <hr>
         <div class="container">
@@ -58,6 +158,7 @@
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3038.861628068594!2d-3.6309676851277244!3d40.389759279368334!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4225a4780677c9%3A0x566409dc229557ef!2sCampus+Sur-UPM%3A+ETS+Ingenier%C3%ADa+y+Sistemas+de+Telecomunicaci%C3%B3n!5e0!3m2!1ses!2ses!4v1509912319753" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
                 </div>
                 <div class ="col-md-4">
+                    <img id="escudo" src="img/escudo2.png">
                     <div id="detalles">
                         <p>Disponemos de:</p>
                         <ul>
