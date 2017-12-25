@@ -7,9 +7,9 @@ function init(){
 
     if (sessionStorage.getItem("token")!=null){
         alert("TenemosToken");
-        //$("#aLogin").text(" Logout");  
-       /* $("#aRegistro").text(" Mi Perfil");
-        var icono = document.createElement("span");
+        $("#aLogin").text(" Logout");  
+        $("#aRegistro").text(" Mi Perfil");
+       /* var icono = document.createElement("span");
         icono.setAttribute("class","glyphicon glyphicon-log-in" );
         $("#aRegistro").append(icono);*/
         var li_registro = document.getElementById("li_registro");

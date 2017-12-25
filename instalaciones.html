@@ -2,44 +2,73 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href=" css/css_instalaciones.css"> 
-         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <title>Padel UPM</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                <script src="https://code.jquery.com/jquery-3.2.1.js"></script>        
+
+        <script type="text/javascript" src="js/funcionalidad.js"></script>
+
+        <title>Padel UPM - Instalaciones</title>
     </head>
     <body>
         
-        <nav class="navbar navbar-inverse" id = "navbar">
-          <div class="container-fluid" id = "barranavegacion">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>                        
-              </button>
-              <a class="navbar-brand" href="index.html">Padel UPM</a>
-            </div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-              <ul class="nav navbar-nav">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="#">Servicios</a></li>
-                <li><a href="#">Instalaciones</a></li>
-                <li><a href="#">Reservas</a></li>
-              </ul>
-              <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Registro</a></li>
-                <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-              </ul>
-            </div>
-          </div>
-        </nav>
+         <section>
+            <nav class="navbar navbar-inverse">
+              <div class="container-fluid" id = "barranavegacion">
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>                        
+                  </button>
+                  <div id="icono-barra">
+                      <a class="navbar-brand" id = "a" href="index.html"><span class="glyphicon glyphicon-home"></span> Pádel UPM</a>
+                  </div>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                  <ul class="nav navbar-nav">
+                    <li><a id= "a" href="index.html">Inicio</a></li>
+                    <li><a id = "a" href="#">Servicios</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Servicios2 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#entrenamiento">Entrenamientos personalizados</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#clases">Clases</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#campeonato">Campeonatos</a></li>
+                        </ul>
+                    </li>
+                    <li><a id = "a" href="instalaciones.html">Instalaciones</a></li>
+                    <li><a id ="a" href="#">Reservas</a></li>
+                  </ul>
+                  <ul class="nav navbar-nav navbar-right">
+                    <li id="li_registro"><a id = "aRegistro"><span id="iconoRegistro" class="glyphicon glyphicon-user"></span> Registro</a></li>
+                    <li><a id= "aLogin"><span id="iconoLogin" class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+        </section>
         
-        <h2> Instalaciones </h2>
+        <h1> Instalaciones </h1>
+        <hr>
         <div class="container">
             <div class="jumbotron">
                 <div class ="col-md-8">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3038.861628068594!2d-3.6309676851277244!3d40.389759279368334!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4225a4780677c9%3A0x566409dc229557ef!2sCampus+Sur-UPM%3A+ETS+Ingenier%C3%ADa+y+Sistemas+de+Telecomunicaci%C3%B3n!5e0!3m2!1ses!2ses!4v1509912319753" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
                 </div>
                 <div class ="col-md-4">
-                    <p>ammmmmmm</p>
+                    <div id="detalles">
+                        <p>Disponemos de:</p>
+                        <ul>
+                            <li> 4 pistas de cristal cubiertas.</li>
+                            <li> 3 pistas de cristal semicubiertas.</li>
+                            <li> 3 pistas de cemento exteriores.</li>
+                            <li> 2 pistas de tenis.</li>
+                            <li> Vestuarios completos.</li>
+                            <li> Cafetería con terraza.</li>
+                        </ul>
+                    </div>
                 </div>
                     
             </div>

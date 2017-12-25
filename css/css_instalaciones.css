@@ -1,36 +1,95 @@
+.navbar-inverse {
+    background-color: #B2DCBA !important;
+    color: #264B2D !important;
+    border-color: #264B2D;
+    margin-bottom: 0px !important;
+}
+
+.navbar-inverse .navbar-nav>li>a{
+    color: #264B2D !important;
+}
+
 .navbar-inverse .navbar-brand {
     color: #264B2D !important;
 }
 
-.navbar-inverse .navbar-nav>li>a {
-    color: #264B2D !important;
+.navbar-nav>li>a:hover {
+    color: #FFFFFF !important;
 }
 
-#barranavegacion{
-    background-color: #B2DCBA;
+.dropdown:hover{
+    background-color: #264B2D !important;
+    color: #FFFFFF !important;
+}
+
+.dropdown-menu, .navbar-inverse .navbar-nav>.open>a{
+    background-color: #B2DCBA !important;
     color: #264B2D !important;
+    border-color: #264B2D;
+    margin-bottom: 0px !important;
+}
+
+.navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover{
+    background-color: #264B2D !important;
+    color: #FFFFFF !important;
+}
+
+
+#a:hover, #aRegistro:hover, #aLogin:hover, .dropdown-menu>li>a:hover, .dropdown:hover{
+    background-color: #264B2D !important;
+    color: #FFFFFF !important;
 }
 
 body {
-    background-color: #264B2D !important ;
+    background-color: #F0FEF2 !important ;
 }
 
-#footer {
-    margin-top: 100;
-    background-color: #264B2D;
-    color: #FFFFFF;
-    padding-top: 20;
+h1{
+    color: #264B2D !important;
+    text-align: center;
+    font-variant: small-caps;
+}
+
+hr {
+    width: 30%;
+    height: 0.4% !important;
+    background-color: #264B2D !important; 
+    margin-top: 0.7% !important;
+    margin-bottom: 0.7% !important;
+    border-color: #264B2D !important; 
+    border-radius: 90%; 
 }
 
 .container {
     background-color: #B2DCBA;
     color: #264B2D;
+    border: 3px solid  #264B2D;
     height: 90%;
     width: 90% !important;
 }
 
 .jumbotron {
-        background-color: #B2DCBA !important;
-
+    background-color: #B2DCBA !important;
+    border: 3px solid  red;
 }
+
+.col-md-4{
+    margin-top: 10%;
+}
+
+#detalles{
+    border: 2px solid  #264B2D;
+    padding-top: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 5%;
+}
+
+#footer {
+    margin-top: 5%;
+    background-color: #264B2D;
+    color: #FFFFFF;
+    padding-top: 20;
+}
+
 
