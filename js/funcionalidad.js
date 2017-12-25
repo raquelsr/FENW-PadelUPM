@@ -9,15 +9,18 @@ function init(){
     if (sessionStorage.getItem("token")!=null){
         alert("TenemosToken");
         $("#aLogin").text(" Logout");  
-        $("#aRegistro").text(" Mi Perfil");
-       /* var icono = document.createElement("span");
+        var iconoLogin = document.createElement("span");
+        iconoLogin.setAttribute
+       // $("#aRegistro").text(" Mi Perfil");
+        var icono = document.createElement("span");
         icono.setAttribute("class","glyphicon glyphicon-log-in" );
-        $("#aRegistro").append(icono);*/
+        $("#aRegistro").append(icono);
         var li_registro = document.getElementById("li_registro");
         var aRegistro = document.createElement("a");
         aRegistro.setAttribute("id", "aRegistro");
-        var iRegistro = document.createElement("span");
-        iRegistro.setAttribute("class","glyphicon glyphicon-log-in");
+        aRegistro.appendChild(icono);
+       // var iRegistro = document.createElement("span");
+      //  iRegistro.setAttribute("class","glyphicon glyphicon-log-in");
         
   //      var registro = document.getElementById("iconoRegistro");
     //    registro.setAttribute("class", "glyphicon glyphicon-log-in");
@@ -75,9 +78,23 @@ function init(){
      httpRequest.responseType = "json";
      httpRequest.onload = login;
      httpRequest.send();
+     
+   /*  $.ajax({
+         url: "http://salonso.etsisi.upm.es/fenw/padel/login.php",
+         data: "userid="+user+"&password"+pwd,
+         type: "GET",
+         success: login,
+         error: function(){
+             alert("Errooooooor");
+             alert(url);
+         },
+         
+     })*/
+     
+     
 }     
 
- function login() {
+function login() {
     alert("alert 2");
     var response = httpRequest.response;
     if (response==="wrong user or password"){
@@ -108,7 +125,6 @@ function autenticado(token){
     $("#modalLogin").modal("hide");
     init();
 }
-
 
 function allowDrop(ev) {
     ev.preventDefault();
