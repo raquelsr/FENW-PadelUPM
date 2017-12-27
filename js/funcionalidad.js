@@ -7,26 +7,34 @@ function init(){
     alert("Toooook init " + sessionStorage.getItem("token"));
 
     if (sessionStorage.getItem("token")!=null){
-        alert("TenemosToken");
-        $("#aLogin").text(" Logout");  
-        var iconoLogin = document.createElement("span");
-        iconoLogin.setAttribute
-       // $("#aRegistro").text(" Mi Perfil");
-        var icono = document.createElement("span");
-        icono.setAttribute("class","glyphicon glyphicon-log-in" );
-        $("#aRegistro").append(icono);
-        var li_registro = document.getElementById("li_registro");
-        var aRegistro = document.createElement("a");
-        aRegistro.setAttribute("id", "aRegistro");
-        aRegistro.appendChild(icono);
-       // var iRegistro = document.createElement("span");
-      //  iRegistro.setAttribute("class","glyphicon glyphicon-log-in");
+        $("#aLogin").text("");
+        var iconoLogout = document.createElement("span");
+        iconoLogout.setAttribute("class","glyphicon glyphicon-off" );
+        $("#aLogin").append(iconoLogout);
+        $("#aLogin").append(" Logout");
         
-  //      var registro = document.getElementById("iconoRegistro");
-    //    registro.setAttribute("class", "glyphicon glyphicon-log-in");
-
-   
+        $("#aRegistro").text("");
+        var iconoRegistro = document.createElement("span");
+        iconoRegistro.setAttribute("class","glyphicon glyphicon-user" );
+        $("#aRegistro").append(iconoRegistro);
+        $("#aRegistro").append(" Mi Perfil");
+    } else {
+        $("#aLogin").text("");
+        var iconoLogin = document.createElement("span");
+        iconoLogin.setAttribute("class","glyphicon glyphicon-log-in" );
+        $("#aLogin").append(iconoLogin);
+        $("#aLogin").append(" Login");
+        
+        $("#aRegistro").text("");
+        var iconoRegistro = document.createElement("span");
+        iconoRegistro.setAttribute("class","glyphicon glyphicon-user" );
+        $("#aRegistro").append(iconoRegistro);
+        $("#aRegistro").append(" Registro");
     }
+    
+    $("#aReservas").click(function(){
+        alert("Función no implementada.");
+    });
  
     $("#aRegistro").click(function(){
         $("#modalRegistro").modal("show");
@@ -37,7 +45,7 @@ function init(){
             $("#modalLogin").modal("show");
         } else {
             sessionStorage.removeItem("token");
-            $("#aLogin").text(" Login");
+            init();
         }
     });
     
@@ -46,31 +54,24 @@ function init(){
          $("#modalRegistro").modal("show");
     })
     
-       
-   /* $('#aLogin').click(function(){
-        $(this).find('i').toggleClass('glyphicon glyphicon-log-in').toggleClass('glyphicon glyphicon-off');
-    }); */
-    
     $("#accederLogin").click(function(){
         if ($("#usr_log").val()==="" || $("#pwd_log").val()===""){
-            alert("Usuario o contraseña incorrectos.");
-            $("#modalLogin").modal("show");
-        } if (arrastrado != true){
-            alert("Arrastra la imagen para completar el proceso.")
+            alert("Rellene los campos.");
+        } else if (arrastrado != true){
+            alert("Arrastre la imagen al cuadrado para completar el proceso.")
         }else {
             requestLogin();
         }
-    });
-    
-    $("#aReservas").click(function(){
-        alert("Función no implementada.");
     });
 }
    
  function requestLogin() {
      var user = $("#usr_log").val();
      var pwd = $("#pwd_log").val();
-     alert("alert 1");
+
+     //alert("alert 1");
+     setTimeOut(8000);
+
 
      httpRequest = new XMLHttpRequest();
     // httpRequest.open("GET", "http://fenw.etsisi.upm.es/login?userid=" + user + "&password=" + pwd, true);
@@ -92,10 +93,14 @@ function init(){
      })*/
      
      
-}     
+}   
+
+function wait(){
+    alert("wait");
+}
 
 function login() {
-    alert("alert 2");
+   // alert("alert 2");
     var response = httpRequest.response;
     if (response==="wrong user or password"){
         alert("El usuario o contraseña introducidos no existen. Intentelo de nuevo.");
@@ -120,7 +125,6 @@ function login() {
 }
 
 function autenticado(token){
-    alert("Token" + token);
     sessionStorage.setItem("token", token);    
     $("#modalLogin").modal("hide");
     init();
