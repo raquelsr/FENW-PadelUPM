@@ -4,8 +4,6 @@ var arrastrado = false;
 
 function init(){
     
-    alert("Toooook init " + sessionStorage.getItem("token"));
-
     if (sessionStorage.getItem("token")!=null){
         $("#aLogin").text("");
         var iconoLogout = document.createElement("span");
@@ -31,7 +29,7 @@ function init(){
         $("#aRegistro").append(iconoRegistro);
         $("#aRegistro").append(" Registro");
     }
-    
+        
     $("#aReservas").click(function(){
         alert("Función no implementada.");
     });
@@ -68,11 +66,7 @@ function init(){
  function requestLogin() {
      var user = $("#usr_log").val();
      var pwd = $("#pwd_log").val();
-
-     //alert("alert 1");
-     setTimeOut(8000);
-
-
+ 
      httpRequest = new XMLHttpRequest();
     // httpRequest.open("GET", "http://fenw.etsisi.upm.es/login?userid=" + user + "&password=" + pwd, true);
      httpRequest.open("GET", "http://salonso.etsisi.upm.es/fenw/padel/login.php?userid=" + user + "&password=" + pwd, true);
@@ -80,54 +74,46 @@ function init(){
      httpRequest.onload = login;
      httpRequest.send();
      
-   /*  $.ajax({
-         url: "http://salonso.etsisi.upm.es/fenw/padel/login.php",
-         data: "userid="+user+"&password"+pwd,
-         type: "GET",
-         success: login,
-         error: function(){
-             alert("Errooooooor");
-             alert(url);
-         },
-         
-     })*/
-     
-     
+     sleep(500);
 }   
 
-function wait(){
-    alert("wait");
-}
-
 function login() {
-   // alert("alert 2");
-    var response = httpRequest.response;
-    if (response==="wrong user or password"){
-        alert("El usuario o contraseña introducidos no existen. Intentelo de nuevo.");
-    } else {
-        autenticado(response);
-        /*sessionStorage.setItem("token", response);
-        $("#reserva").text("re2");
-        var texto = sessionStorage.getItem("token");
-        alert("session" + texto);*/
-    }
-
    
+    // PRIMER SERVIDOR
+    
    /* if (httpRequest.status === 200){
         var cabecera = httpRequest.getResponseHeader("Authorization");
         var token = cabecera.split(" ")[1];
         autenticado(token);
-   } else if (httpRequest.status ===401){
-        alert('Usuario o contraseña incorrecta.');
-   } else{
-       alert('Error.');
-   }   */   
+   } else if (httpRequest.status === 401){
+        alert('Usuario o contraseña incorrectos. Inténtelo de nuevo.');
+   } */
+    
+    
+    // SEGUNDA WEB
+    
+    var response = httpRequest.response;
+    if (response==="wrong user or password"){
+        alert("Usuario o contraseña incorrectos. Inténtelo de nuevo.");
+    } else {
+        var cabecera = httpRequest.getResponseHeader("Authorization");
+        var token = cabecera.split(" ")[1];
+        autenticado(token);
+    }
 }
 
 function autenticado(token){
     sessionStorage.setItem("token", token);    
     $("#modalLogin").modal("hide");
     init();
+}
+
+function sleep(milisegundos) {
+  var comienzo = new Date().getTime();
+  while (true) {
+    if ((new Date().getTime() - comienzo) > milisegundos)
+      break;
+  }
 }
 
 function allowDrop(ev) {
